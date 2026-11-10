@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedMath Suite — math for AI in medicine</title>
+  <style>
+    :root {
+      --bg1: #101a2e; --bg2: #1a1230;
+      --panel: rgba(255,255,255,.055); --panel-border: rgba(255,255,255,.12);
+      --text: #eef1ff; --muted: #a9b0cf;
+      --teal: #2dd4bf; --purple: #8b5cf6; --gold: #ffc247;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1100px 600px at -10% -10%, #123c46 0%, transparent 55%),
+        radial-gradient(900px 600px at 110% 0%, #2c1d5e 0%, transparent 55%),
+        linear-gradient(160deg, var(--bg1), var(--bg2)) fixed;
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 32px 18px;
+    }
+    main { width: 100%; max-width: 900px; }
+    header { text-align: center; margin-bottom: 34px; }
+    .logo { font-size: 54px; line-height: 1; }
+    h1 { font-size: clamp(28px, 5vw, 42px); letter-spacing: -.5px; margin: 10px 0 8px; }
+    h1 span { background: linear-gradient(135deg, var(--teal), #3b82f6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .tagline { color: var(--muted); font-size: 16px; max-width: 560px; margin: 0 auto; line-height: 1.6; }
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 680px) { .cards { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--panel); border: 1px solid var(--panel-border); border-radius: 18px;
+      padding: 24px; display: flex; flex-direction: column; gap: 10px;
+      transition: transform .15s, border-color .2s; text-decoration: none; color: inherit;
+    }
+    .card:hover { transform: translateY(-4px); border-color: var(--teal); }
+    .card .emoji { font-size: 34px; }
+    .card h2 { font-size: 20px; }
+    .card p { color: var(--muted); font-size: 14px; line-height: 1.6; flex: 1; }
+    .card .go {
+      align-self: flex-start; margin-top: 6px;
+      background: linear-gradient(135deg, var(--teal), #3b82f6);
+      color: #06222a; font-weight: 700; font-size: 14px;
+      padding: 9px 16px; border-radius: 10px;
+    }
+    .meta { text-align: center; margin-top: 30px; color: var(--muted); font-size: 12.5px; line-height: 1.9; }
+    .meta a { color: var(--teal); text-decoration: none; }
+    .meta a:hover { text-decoration: underline; }
+    .chips { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 14px; }
+    .chip { font-size: 11px; color: #cbb8ff; background: rgba(139,92,246,.18); border-radius: 20px; padding: 4px 11px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="logo">🔬</div>
+      <h1>MedMath <span>Suite</span></h1>
+      <p class="tagline">The mathematics behind AI in medicine — learn it, play it, and read clinical-AI papers like a reviewer. Offline, dependency-free, and open source.</p>
+    </header>
+
+    <div class="cards">
+      <a class="card" href="medmath-lab/">
+        <div class="emoji">📘</div>
+        <h2>MedMath Lab</h2>
+        <p>A 7-unit interactive course from arithmetic to deep learning: 41 lessons, 114 questions, 18 canvas demos, spaced review, and a library of 27 landmark papers with reviewer's drills.</p>
+        <span class="go">Start the course →</span>
+      </a>
+
+      <a class="card" href="mathquest/">
+        <div class="emoji">⚔️</div>
+        <h2>MathQuest</h2>
+        <p>A math RPG where solving problems is your weapon. Six tiers of difficulty, streak and speed bonuses, and MedAI boss battles against Dr. Bayes and the False-Positive Phantom.</p>
+        <span class="go">Play the game →</span>
+      </a>
+    </div>
+
+    <div class="chips">
+      <span class="chip">7 units</span>
+      <span class="chip">41 lessons</span>
+      <span class="chip">114 questions</span>
+      <span class="chip">27 papers</span>
+      <span class="chip">18 demos</span>
+      <span class="chip">LocalStorage saves</span>
+    </div>
+
+    <p class="meta">
+      <a href="https://github.com/mobinmohammadi10/medmath-suite">Source on GitHub</a> · MIT License<br />
+      Educational project — not medical software; not for diagnosis or treatment.
+    </p>
+  </main>
+</body>
+</html>
