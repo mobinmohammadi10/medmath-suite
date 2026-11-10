@@ -11,6 +11,12 @@ Two apps, one repo:
 
 No build step, no package manager, no network required. Open an `index.html` and go.
 
+## Live demo
+
+- **MedMath Lab:** <https://mobinmohammadi10.github.io/medmath-suite/medmath-lab/>
+- **MathQuest:** <https://mobinmohammadi10.github.io/medmath-suite/mathquest/>
+- **Landing page:** <https://mobinmohammadi10.github.io/medmath-suite/>
+
 ---
 
 ## Why this exists
