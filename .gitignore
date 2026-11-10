@@ -1,0 +1,21 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs
+*.log
+
+# Node artifacts (the apps don't need Node, but avoid accidental commits)
+node_modules/
+npm-debug.log*
+
+# Local environment / secrets
+.env
+.env.*

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🔬 MedMath Lab — Math for AI in Medicine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- ================= Header ================= -->
+    <header id="hud">
+      <div class="hud-title">
+        <span class="hud-logo">🔬</span>
+        <div>
+          <h1>MedMath Lab</h1>
+          <small>Math for AI in Medicine — play it, prove it, own it</small>
+        </div>
+      </div>
+      <div class="hud-stats">
+        <div class="progress-wrap">
+          <div class="progress-bar"><div class="progress-fill" id="total-progress"></div></div>
+          <span id="progress-text">0%</span>
+        </div>
+        <button id="btn-reviews" class="btn ghost review-btn" title="Spaced review">📦 Reviews (<span id="review-count">0</span>)</button>
+        <button id="btn-papers" class="btn ghost" title="Landmark papers library">📚 Papers (<span id="papers-count">0</span>)</button>
+        <a id="btn-mathquest" class="btn ghost" href="../mathquest/index.html" title="Open MathQuest">⚔️ Game</a>
+      </div>
+    </header>
+
+    <!-- ================= Map / Course Screen ================= -->
+    <main id="map-screen" class="screen">
+      <div class="map-hero">
+        <h2>Your journey: from basics → reading medical-AI papers</h2>
+        <p>A nonprofit chain gives patients a diagnostic test. 95% accurate sounds great — the lab will show you why that could still mean most positives are <em>wrong</em>. Each unit gives you the tools real papers assume you have.</p>
+      </div>
+      <div id="unit-grid" class="unit-grid"></div>
+      <p class="footer-note">Progress saves automatically in your browser. <a href="#" id="btn-reset">Reset progress</a></p>
+    </main>
+
+    <!-- ================= Lesson Screen ================= -->
+    <main id="lesson-screen" class="screen hidden">
+      <div class="lesson-top">
+        <button id="btn-back" class="btn ghost">← Course map</button>
+        <span id="lesson-crumb" class="crumb"></span>
+        <button id="btn-lesson-papers" class="btn ghost" title="Papers for this unit">📄 Papers</button>
+      </div>
+      <article id="lesson-body"></article>
+      <section id="quiz-box"></section>
+      <div class="lesson-footer">
+        <button id="btn-next-lesson" class="btn big hidden">Next lesson →</button>
+      </div>
+    </main>
+
+    <!-- ================= Review Screen ================= -->
+    <main id="review-screen" class="screen hidden">
+      <div class="lesson-top">
+        <button id="btn-back-review" class="btn ghost">← Course map</button>
+        <span id="review-crumb" class="crumb">📦 Spaced review</span>
+      </div>
+      <p class="review-intro">Questions you've learned resurface over time — <strong>tiny effort, long memory</strong>. Answer, then rate honestly.</p>
+      <section id="review-box"></section>
+      <div id="review-done" class="empty-state hidden">✅ You're all caught up! Come back tomorrow.</div>
+    </main>
+
+    <!-- ================= Papers Library Screen ================= -->
+    <main id="papers-screen" class="screen hidden">
+      <div class="lesson-top">
+        <button id="btn-back-papers" class="btn ghost">← Course map</button>
+        <span class="crumb">📚 Landmark papers — read like a reviewer</span>
+      </div>
+      <p class="review-intro">The papers that shaped medical AI, tagged to the units that unlock their ideas. Skim the <em>why</em>, note the <em>read-for</em>, then answer the <strong>reviewer's drill</strong> before revealing the model answer. Track what you've read.</p>
+      <div class="paper-toolbar">
+        <div id="paper-filters" class="paper-filters"></div>
+        <label class="paper-hide"><input type="checkbox" id="hide-read" /> hide read</label>
+      </div>
+      <div id="paper-list" class="paper-list"></div>
+    </main>
+
+    <!-- ================= Modal ================= -->
+    <div id="modal-overlay" class="overlay hidden">
+      <div class="modal">
+        <div class="modal-emoji" id="modal-icon">🎓</div>
+        <h2 id="modal-title"></h2>
+        <p id="modal-text"></p>
+        <button id="modal-btn" class="btn primary">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="lessons.js"></script>
+  <script src="papers.js"></script>
+  <script src="demos.js"></script>
+  <script src="lab.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>⚔️ MathQuest RPG — Math is your weapon!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- ===== Header / Player HUD ===== -->
+    <header id="hud">
+      <div class="hud-title">
+        <span class="hud-logo">⚔️</span>
+        <h1>MathQuest <small>RPG</small></h1>
+      </div>
+      <div class="hud-stats">
+        <div class="hud-badge" id="hud-level">Lv 1</div>
+        <div class="xp-wrap">
+          <div class="xp-bar"><div class="xp-fill" id="xp-fill"></div></div>
+          <span id="xp-text">0 / 30 XP</span>
+        </div>
+        <div class="hud-badge gold">💰 <span id="hud-gold">0</span></div>
+        <button id="btn-sound" class="icon-btn" title="Toggle sound">🔊</button>
+      </div>
+    </header>
+
+    <!-- ===== Battle Screen ===== -->
+    <main id="battle-screen" class="screen">
+      <!-- Monster -->
+      <section class="monster-zone">
+        <div class="fighter-card" id="monster-card">
+          <div class="fighter-hp">
+            <span id="monster-name">Slime</span>
+            <div class="hp-bar"><div class="hp-fill monster" id="monster-hp"></div></div>
+            <span id="monster-hp-text" class="hp-text">20/20</span>
+          </div>
+          <div class="fighter-stage">
+            <div class="sprite" id="monster-sprite">🟢</div>
+            <div class="dmg-layer" id="monster-dmg"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Question panel -->
+      <section class="arena">
+        <div class="combo-banner" id="combo-banner">🔥 Combo x2</div>
+        <div class="quest-panel">
+          <div class="quest-label">⚔️ Strike!</div>
+          <div id="question-text" class="question">What is 12 + 34?</div>
+          <div class="timer-track"><div class="timer-fill" id="timer-fill"></div></div>
+          <div class="answer-row">
+            <input id="answer-input" type="text" inputmode="text" autocomplete="off"
+                   placeholder="Your answer…" />
+            <button id="btn-submit" class="btn primary">Attack ⚔️</button>
+          </div>
+          <div class="item-row">
+            <button id="btn-hint" class="btn ghost">💡 Hint (<span id="hint-count">1</span>)</button>
+            <button id="btn-potion" class="btn ghost">🧪 Potion (<span id="potion-count">1</span>)</button>
+            <button id="btn-flee" class="btn ghost danger">🏃 Flee</button>
+          </div>
+          <div id="hint-text" class="hint-text"></div>
+        </div>
+        <div id="log" class="log"></div>
+      </section>
+
+      <!-- Player -->
+      <section class="player-zone">
+        <div class="fighter-card player" id="player-card">
+          <div class="fighter-hp">
+            <span>You (Lv <span id="pl-level">1</span> Knight)</span>
+            <div class="hp-bar"><div class="hp-fill" id="player-hp"></div></div>
+            <span id="player-hp-text" class="hp-text">100/100</span>
+          </div>
+          <div class="fighter-stage">
+            <div class="sprite" id="player-sprite">🛡️</div>
+            <div class="dmg-layer" id="player-dmg"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Shop / Camp Screen ===== -->
+    <main id="shop-screen" class="screen hidden">
+      <h2 id="shop-title">🏕️ Victory Camp</h2>
+      <p id="shop-sub">Spend your gold, then fight on!</p>
+      <div class="shop-grid">
+        <div class="shop-card">
+          <div class="shop-icon">🧪</div>
+          <h3>Health Potion</h3>
+          <p>Heals 40 HP. Usable in battle.</p>
+          <button class="btn primary" id="buy-potion">💰 30</button>
+        </div>
+        <div class="shop-card">
+          <div class="shop-icon">💡</div>
+          <h3>Hint Scroll</h3>
+          <p>Reveals a clue about the answer.</p>
+          <button class="btn primary" id="buy-hint">💰 20</button>
+        </div>
+        <div class="shop-card">
+          <div class="shop-icon">❤️</div>
+          <h3>Training</h3>
+          <p>+10 Max HP forever.</p>
+          <button class="btn primary" id="buy-maxhp">💰 50</button>
+        </div>
+      </div>
+      <div class="camp-stats" id="camp-stats"></div>
+      <button class="btn big" id="btn-next-battle">⚔️ Fight on!</button>
+    </main>
+
+    <!-- ===== Modal (level up / defeat) ===== -->
+    <div id="modal-overlay" class="overlay hidden">
+      <div class="modal">
+        <div class="modal-emoji" id="modal-icon">⭐</div>
+        <h2 id="modal-title">Level Up!</h2>
+        <p id="modal-text">You reached Level 2.</p>
+        <button id="modal-btn" class="btn primary">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
